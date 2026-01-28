@@ -74,16 +74,16 @@ import { Router } from '@angular/router';
     }
     .nav-links a {
       text-decoration: none;
-      color: var(--accent-color, #333);
+      color: var(--header-text-color, #333);
       font-weight: 700;
       transition: all 0.2s;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
     .nav-links a:hover { opacity: 0.8; transform: translateY(-1px); }
-    .cart-emoji { font-size: 1.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    .cart-emoji { font-size: 1.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
     
     /* CART ICON */
-    .cart-icon-wrapper { position: relative; cursor: pointer; padding: 5px; }
+    .cart-icon-wrapper { position: relative; cursor: pointer; padding: 5px; color: var(--header-text-color); }
     .cart-icon-wrapper:hover { transform: scale(1.1); }
     .badge {
       position: absolute; top: -5px; right: -8px;
@@ -92,23 +92,21 @@ import { Router } from '@angular/router';
       width: 18px; height: 18px;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--primary-color);
     }
 
     /* PROFILE DROPDOWN */
     .profile-dropdown { position: relative; display: inline-block; cursor: pointer; }
-    .user-chip { background: var(--accent-color, #f0f0f0); color: var(--primary-color, #333); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; filter: brightness(0.95); }
+    .user-chip { background: rgba(255,255,255,0.2); color: var(--header-text-color); padding: 6px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); }
     .dropdown-content { display: none; position: absolute; right: 0; background-color: white; min-width: 120px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; z-index: 1000; }
-    .dropdown-content a { color: #e74c3c !important; padding: 12px 16px; text-decoration: none; display: block; border-radius: 8px; font-weight: bold; }
+    .dropdown-content a { color: #e74c3c !important; padding: 12px 16px; text-decoration: none; display: block; border-radius: 8px; font-weight: bold; text-shadow: none; }
     .profile-dropdown:hover .dropdown-content { display: block; }
 
     /* THEMES */
-    header.fashion { background: var(--primary-color); color: var(--accent-color); }
-    header.fashion .nav-links a { color: var(--accent-color); }
-    header.fashion .user-chip { background: rgba(255,255,255,0.1); color: var(--accent-color); }
-    header.electronics { background: var(--primary-color); border-bottom: 2px solid var(--accent-color); }
-    header.electronics .nav-links a { color: var(--accent-color); }
-    header.electronics .user-chip { background: rgba(255,255,255,0.1); color: var(--accent-color); }
-    header.grocery { border-bottom: 3px solid var(--primary-color); }
+    header.fashion { background: var(--primary-color); color: var(--header-text-color); }
+    header.electronics { background: var(--primary-color); border-bottom: 2px solid rgba(255,255,255,0.1); }
+    header.grocery { background: var(--primary-color); }
+    header.grocery .user-chip { background: rgba(0,0,0,0.05); }
   `]
 })
 export class HeaderComponent {

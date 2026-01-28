@@ -26,6 +26,7 @@ export class StyleEngineService {
         --btn-primary-bg: ${primary} !important;
         --btn-primary-text: #ffffff !important;
         --btn-secondary-bg: ${secondary} !important;
+        --header-text-color: #ffffff !important;
       }
     `;
 
