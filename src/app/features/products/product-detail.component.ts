@@ -194,6 +194,20 @@ import { TenantConfig } from '../../core/models/tenant.model';
             </div>
         </div>
 
+            <!-- DEFAULT / MINIMAL LAYOUT -->
+            <div *ngSwitchDefault class="layout-fashion">
+               <div class="media-gallery">
+                  <img [src]="content.product.images[0]" alt="Product" class="main-img">
+               </div>
+               <div class="info-panel">
+                  <nav class="breadcrumb">Home / {{ content.product.category }} / {{ content.product.name }}</nav>
+                  <h1>{{ content.product.name }}</h1>
+                  <p class="price">{{ content.product.price | currency }}</p>
+                  <p class="description">{{ content.product.description }}</p>
+                  <button class="add-btn" (click)="addToCart(content.product)">Add to Bag</button>
+               </div>
+            </div>
+
         </ng-container>
       </div>
     </div>
