@@ -16,8 +16,8 @@ import { Observable, switchMap, map, BehaviorSubject, combineLatest, catchError,
       <div *ngIf="(content.config.uiSettings?.homeTemplate || content.config.homeLayout) === 'hero-grid'" class="layout-hero">
         <div class="hero-banner" [style.backgroundImage]="'url(' + (content.config.uiSettings?.bannerUrl || content.config.cdnBaseUrl + '/hero_' + content.config.theme + '.jpg') + ')'">
           <div class="hero-content">
-            <h1 class="fade-in">New Collection 2024</h1>
-            <p>Elevate your wardrobe with our latest drops.</p>
+            <h1 class="fade-in">{{ content.config.name || 'New Collection' }}</h1>
+            <p>Elevate your lifestyle with our curated collection.</p>
             <button class="hero-btn">Shop Now</button>
           </div>
         </div>

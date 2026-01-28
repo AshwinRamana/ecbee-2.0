@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
           <a *ngIf="config.features.offers" routerLink="/offers">Offers</a>
           
           <div *ngIf="config.features.cart" class="cart-icon-wrapper" (click)="openCart()">
-             <span>🛒</span>
+             <span class="cart-emoji">🛒</span>
              <span class="badge" *ngIf="(cartService.count$ | async) as count">{{ count }}</span>
           </div>
 
@@ -75,9 +75,12 @@ import { Router } from '@angular/router';
     .nav-links a {
       text-decoration: none;
       color: var(--accent-color, #333);
-      font-weight: 500;
-      transition: color 0.2s;
+      font-weight: 700;
+      transition: all 0.2s;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
+    .nav-links a:hover { opacity: 0.8; transform: translateY(-1px); }
+    .cart-emoji { font-size: 1.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
     
     /* CART ICON */
     .cart-icon-wrapper { position: relative; cursor: pointer; padding: 5px; }

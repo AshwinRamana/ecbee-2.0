@@ -4,7 +4,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductService } from '../../core/services/product.service';
 import { TenantConfigService } from '../../core/services/tenant-config.service';
 import { CartService } from '../../core/services/cart.service';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, catchError, of, map } from 'rxjs';
 import { TenantConfig } from '../../core/models/tenant.model';
 
 @Component({
@@ -257,16 +257,18 @@ export class ProductDetailComponent implements OnInit {
         private cartService: CartService
     ) {
         this.content$ = this.route.params.pipe(
-            switchMap(params => this.productService.getProductById(params['id'])),
+            switchMap(params => this.productService.getProductById(params['id']).pipe(
+                catchError(err => {
+                    console.error('[ProductDetail] ❌ Product fetch failed:', err);
+                    return of(null);
+                })
+            )),
             switchMap(product => {
                 if (product && product.variants && product.variants.length > 0) {
                     this.selectedVariant = product.variants[0];
                 }
                 return this.tenantService.config.pipe(
-                    switchMap(config => new Observable<any>(obs => {
-                        obs.next({ config, product });
-                        obs.complete();
-                    }))
+                    map(config => ({ config, product }))
                 );
             })
         );
