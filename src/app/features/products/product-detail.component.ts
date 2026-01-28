@@ -264,13 +264,14 @@ export class ProductDetailComponent implements OnInit {
         private tenantService: TenantConfigService,
         private cartService: CartService
     ) {
-        switchMap(params => this.productService.getProductById(params['id']).pipe(
-            catchError(err => {
-                console.error('[ProductDetail] ❌ Product fetch failed:', err);
-                this.hasError = true;
-                return of(null);
-            })
-        )),
+        this.content$ = this.route.params.pipe(
+            switchMap(params => this.productService.getProductById(params['id']).pipe(
+                catchError(err => {
+                    console.error('[ProductDetail] ❌ Product fetch failed:', err);
+                    this.hasError = true;
+                    return of(null);
+                })
+            )),
             switchMap(product => {
                 if (product && product.variants && product.variants.length > 0) {
                     this.selectedVariant = product.variants[0];
