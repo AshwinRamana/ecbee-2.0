@@ -13,7 +13,7 @@ deployment_guide.md
 
 # Angular specific
 .angular/
-src/environments/environment.prod.ts
+# src/environments/environment.prod.ts
 
 # Large files
 *.zip
