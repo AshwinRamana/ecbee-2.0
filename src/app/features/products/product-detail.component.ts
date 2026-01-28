@@ -15,8 +15,15 @@ import { TenantConfig } from '../../core/models/tenant.model';
     <div class="product-detail-page" *ngIf="content$ | async as content" [ngClass]="content.config.theme">
       
       <!-- LOADING STATE -->
-      <div *ngIf="!content.product" class="loading">
+      <div *ngIf="!content.product && !hasError" class="loading">
         <div class="spinner"></div>
+      </div>
+
+      <!-- ERROR STATE -->
+      <div *ngIf="hasError" class="error-container">
+        <h2>Oops! Product not found.</h2>
+        <p>We couldn't find the product you're looking for. It might have been moved or deleted.</p>
+        <button routerLink="/home" class="back-btn">Back to Shop</button>
       </div>
 
       <!-- MAIN CONTENT -->
@@ -249,6 +256,7 @@ export class ProductDetailComponent implements OnInit {
     content$: Observable<{ config: TenantConfig, product: any }>;
     quantity: number = 1;
     selectedVariant: string | null = null;
+    hasError: boolean = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -256,13 +264,13 @@ export class ProductDetailComponent implements OnInit {
         private tenantService: TenantConfigService,
         private cartService: CartService
     ) {
-        this.content$ = this.route.params.pipe(
-            switchMap(params => this.productService.getProductById(params['id']).pipe(
-                catchError(err => {
-                    console.error('[ProductDetail] ❌ Product fetch failed:', err);
-                    return of(null);
-                })
-            )),
+        switchMap(params => this.productService.getProductById(params['id']).pipe(
+            catchError(err => {
+                console.error('[ProductDetail] ❌ Product fetch failed:', err);
+                this.hasError = true;
+                return of(null);
+            })
+        )),
             switchMap(product => {
                 if (product && product.variants && product.variants.length > 0) {
                     this.selectedVariant = product.variants[0];
