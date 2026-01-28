@@ -1,0 +1,20 @@
+# Common Node.js files
+node_modules/
+dist/
+.DS_Store
+
+# Environments and Secrets
+.env
+backend/.env
+ecosystem.config.js
+aws_deployment_guide.md
+lambda_deployment_guide.md
+deployment_guide.md
+
+# Angular specific
+.angular/
+src/environments/environment.prod.ts
+
+# Large files
+*.zip
+*.log

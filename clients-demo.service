@@ -1,0 +1,16 @@
+[Unit]
+Description=Clients Demo Angular+Node App
+After=network.target
+
+[Service]
+# Replace 'ubuntu' with your actual username
+User=ubuntu
+# Replace with the actual path to your project
+WorkingDirectory=/home/ubuntu/clients-demo
+ExecStart=/usr/bin/node server.js
+Restart=always
+# Environment variables if needed
+# Environment=MONGO_URI=mongodb+srv://...
+
+[Install]
+WantedBy=multi-user.target
