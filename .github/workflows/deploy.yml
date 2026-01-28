@@ -3,7 +3,7 @@ name: Deploy Frontend to S3
 on:
   push:
     branches:
-      - main  # Set this to your default branc
+      - main  # Set this to your default bran
 
 jobs:
   deploy:
