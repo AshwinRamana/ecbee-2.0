@@ -222,8 +222,9 @@ import { TenantConfig } from '../../core/models/tenant.model';
     .qty-selector span { font-size: 1.2rem; font-weight: 700; width: 30px; text-align: center; }
 
     /* FASHION */
-    .layout-fashion { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; }
-    .main-img { width: 100%; height: 400px; object-fit: contain; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: #fafafa; }
+    .layout-fashion { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .media-gallery { display: flex; justify-content: center; width: 100%; }
+    .main-img { max-width: 100%; height: 450px; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     .layout-fashion h1 { font-size: 36px; font-weight: 800; margin: 10px 0; }
     .price { font-size: 24px; color: #333; margin-bottom: 30px; }
     .chip { display: inline-block; padding: 10px 20px; border: 1px solid #ddd; margin-right: 10px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
@@ -232,8 +233,8 @@ import { TenantConfig } from '../../core/models/tenant.model';
     .breadcrumb { color: #888; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 
     /* ELECTRONICS */
-    .layout-electronics { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-    .hero-tech-img { width: 100%; height: 350px; object-fit: contain; border-radius: 20px; background: #fff; padding: 20px; box-shadow: inset 0 0 50px rgba(0,0,0,0.02); }
+    .layout-electronics { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+    .hero-tech-img { width: 100%; height: 350px; object-fit: contain; border-radius: 20px; background: transparent; padding: 10px; }
     .tech-price { font-size: 32px; font-weight: 900; color: #00d2d3; margin: 20px 0; }
     .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f4f7f9; padding: 20px; border-radius: 12px; margin: 20px 0; }
     .spec-item label { display: block; filter: contrast(0.5); font-size: 12px; text-transform: uppercase; font-weight: 700; }
@@ -244,7 +245,7 @@ import { TenantConfig } from '../../core/models/tenant.model';
 
     /* GROCERY */
     .layout-grocery { display: flex; justify-content: center; }
-    .grocery-card { display: grid; grid-template-columns: 1fr 1.2fr; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); width: 900px; }
+    .grocery-card { display: grid; grid-template-columns: 1fr 1.2fr; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); width: 100%; max-width: 900px; }
     .img-wrap { position: relative; background: #f8fdfa; display: flex; align-items: center; justify-content: center; padding: 40px; }
     .img-wrap img { width: 100%; height: 350px; object-fit: contain; }
     .fresh-tag { position: absolute; top: 20px; left: 20px; background: #2ecc71; color: #fff; padding: 6px 15px; border-radius: 50px; font-size: 12px; font-weight: 800; }

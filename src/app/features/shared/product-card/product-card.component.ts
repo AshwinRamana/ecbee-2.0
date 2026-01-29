@@ -78,9 +78,8 @@ import { CartService } from '../../../core/services/cart.service';
     .card.fashion .product-title { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin: 0.5rem 0; }
     .card.fashion .product-price { font-weight: bold; color: #555; }
     .card.fashion:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .card.fashion .overlay { position: absolute; bottom: -50px; left: 0; right: 0; background: rgba(255,255,255,0.9); padding: 10px; transition: bottom 0.3s; display: flex; justify-content: center; z-index: 10; }
-    .card.fashion:hover .overlay { bottom: 0; }
-    .card.fashion button { border: 1px solid var(--primary-color); background: var(--primary-color); color: var(--accent-color); padding: 5px 15px; cursor: pointer; }
+    .card.fashion .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.7); backdrop-filter: blur(5px); padding: 12px; display: flex; justify-content: center; z-index: 20; opacity: 1; border-top: 1px solid rgba(0,0,0,0.05); }
+    .card.fashion button { border: none; background: #000; color: #fff; padding: 10px 25px; cursor: pointer; font-weight: 800; border-radius: 30px; font-size: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
     /* ELECTRONICS */
     .card.electronics { border: 1px solid #1f4068; background: #0b1c2c; color: #00d2d3; }
@@ -88,7 +87,7 @@ import { CartService } from '../../../core/services/cart.service';
     .card.electronics .card-body { padding: 1rem; }
     .card.electronics .specs { font-size: 0.8rem; color: #8892b0; padding-left: 1.2rem; margin: 0.5rem 0; }
     .card.electronics .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
-    .btn-tech { background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); padding: 5px 10px; cursor: pointer; z-index: 10; }
+    .btn-tech { background: var(--accent-color); border: none; color: #000; padding: 8px 15px; cursor: pointer; z-index: 20; border-radius: 4px; font-weight: 800; text-transform: uppercase; font-size: 0.7rem; }
     .btn-tech:hover { background: var(--accent-color); color: var(--primary-color); }
 
     /* GROCERY */
@@ -97,7 +96,7 @@ import { CartService } from '../../../core/services/cart.service';
     .card.grocery .card-body { padding: 10px; }
     .card.grocery .product-title { font-size: 0.9rem; margin: 0 0 5px 0; }
     .grocery-row { display: flex; justify-content: space-between; align-items: center; }
-    .btn-add { background: var(--primary-color); color: var(--accent-color); border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; z-index: 10; }
+    .btn-add { background: var(--primary-color); color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; z-index: 20; display: flex; align-items: center; justify-content: center; font-weight: 400; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
     /* RESTAURANT */
     .card.restaurant { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
