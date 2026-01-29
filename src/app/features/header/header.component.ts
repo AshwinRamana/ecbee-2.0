@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
   template: `
     <ng-container *ngIf="config$ | async as config">
       <header [ngClass]="config.theme">
-        <div class="logo">
+        <div class="logo" routerLink="/home" style="cursor: pointer;">
           <img [src]="config.branding?.logo || (config.cdnBaseUrl + '/logo_' + config.theme + '.png')" alt="Logo" class="logo-img">
         </div>
         

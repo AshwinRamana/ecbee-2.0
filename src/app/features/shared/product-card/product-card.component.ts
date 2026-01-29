@@ -67,13 +67,13 @@ import { CartService } from '../../../core/services/cart.service';
   styles: [`
     .card { background: white; border-radius: 8px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; position: relative; cursor: pointer; }
     .card-img-container { position: relative; overflow: hidden; cursor: pointer; }
-    img { width: 100%; height: 250px; object-fit: cover; display: block; }
+    img { width: 100%; height: 200px; object-fit: contain; display: block; background: #fafafa; }
     .product-title { cursor: pointer; }
     .product-title:hover { text-decoration: underline; }
 
     /* FASHION */
     .card.fashion { border: none; border-radius: 0; }
-    .card.fashion img { height: 350px; }
+    .card.fashion img { height: 250px; object-fit: cover; }
     .card.fashion .card-body { text-align: center; padding: 1rem; }
     .card.fashion .product-title { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin: 0.5rem 0; }
     .card.fashion .product-price { font-weight: bold; color: #555; }
