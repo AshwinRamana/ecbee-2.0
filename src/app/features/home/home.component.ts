@@ -15,9 +15,9 @@ import { Observable, switchMap, map, BehaviorSubject, combineLatest, catchError,
       <!-- HERO GRID LAYOUT (Fashion) -->
       <div *ngIf="(content.config.uiSettings?.homeTemplate || content.config.homeLayout) === 'hero-grid'" class="layout-hero">
         <div class="hero-banner" [style.backgroundImage]="'url(' + (content.config.uiSettings?.bannerUrl || content.config.cdnBaseUrl + '/hero_' + content.config.theme + '.jpg') + ')'">
-          <div class="hero-content">
-            <h1 class="fade-in">{{ content.config.name || 'New Collection' }}</h1>
-            <p>Elevate your lifestyle with our curated collection.</p>
+          <div class="hero-content liquid-glass">
+            <h1 class="fade-in">{{ content.config.uiSettings?.bannerTitle || content.config.name || 'New Collection' }}</h1>
+            <p>{{ content.config.uiSettings?.bannerSubtitle || 'Elevate your lifestyle with our curated collection.' }}</p>
             <button class="hero-btn">Shop Now</button>
           </div>
         </div>
@@ -109,11 +109,21 @@ import { Observable, switchMap, map, BehaviorSubject, combineLatest, catchError,
 
     /* LAYOUTS */
     .layout-hero { margin-bottom: 4rem; }
-    .hero-banner { height: 600px; background-size: cover; background-position: center; border-radius: 20px; display: flex; align-items: center; padding-left: 80px; position: relative; }
-    .hero-content { background: white; padding: 60px; border-radius: 12px; max-width: 500px; box-shadow: 25px 25px 0px rgba(0,0,0,0.05); }
-    .hero-content h1 { font-size: 52px; font-weight: 900; margin: 0; line-height: 1; }
-    .hero-content p { color: #666; margin: 20px 0; font-size: 18px; }
-    .hero-btn { background: var(--primary-color); color: var(--accent-color); padding: 16px 40px; border: none; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
+    .hero-banner { height: 650px; background-size: cover; background-position: center; border-radius: 24px; display: flex; align-items: center; padding-left: 80px; position: relative; margin-top: 2rem; }
+    .liquid-glass { 
+      background: rgba(255, 255, 255, 0.15); 
+      backdrop-filter: blur(15px) saturate(180%); 
+      -webkit-backdrop-filter: blur(15px) saturate(180%); 
+      border: 1px solid rgba(255, 255, 255, 0.2); 
+      padding: 60px; 
+      border-radius: 24px; 
+      max-width: 600px; 
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+    .liquid-glass h1 { font-size: 58px; font-weight: 900; margin: 0; line-height: 1.1; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .liquid-glass p { color: rgba(255,255,255,0.9); margin: 25px 0; font-size: 20px; font-weight: 500; }
+    .hero-btn { background: #fff; color: #000; padding: 18px 45px; border: none; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; border-radius: 12px; transition: 0.3s; }
+    .hero-btn:hover { background: var(--accent-color); color: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
     .layout-electronics { display: flex; gap: 40px; margin-bottom: 4rem; }
     .sidebar { width: 280px; background: #f4f7f9; padding: 30px; border-radius: 20px; height: fit-content; }

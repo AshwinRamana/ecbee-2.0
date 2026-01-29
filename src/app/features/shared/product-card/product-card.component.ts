@@ -16,7 +16,7 @@ import { CartService } from '../../../core/services/cart.service';
         
         <!-- Overlays for specific themes -->
         <div class="overlay" *ngIf="theme === 'fashion'" (click)="$event.stopPropagation()">
-           <button (click)="addToCart()">Add +</button>
+           <button (click)="addToCart()">Add to Bag</button>
         </div>
       </div>
 

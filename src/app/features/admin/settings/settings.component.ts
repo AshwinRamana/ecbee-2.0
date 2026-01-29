@@ -38,6 +38,17 @@ import { take } from 'rxjs';
                <input type="text" [(ngModel)]="config.uiSettings.bannerUrl" placeholder="https://.../hero.jpg">
                <p class="asset-hint">This will override the theme default hero image.</p>
             </div>
+
+            <div class="form-grid-2 mb-4">
+              <div class="form-group">
+                <label>Banner Title</label>
+                <input type="text" [(ngModel)]="config.uiSettings.bannerTitle" placeholder="e.g. New Collection">
+              </div>
+              <div class="form-group">
+                <label>Banner Subtitle</label>
+                <input type="text" [(ngModel)]="config.uiSettings.bannerSubtitle" placeholder="e.g. Elevate your lifestyle">
+              </div>
+            </div>
          </section>
 
          <!-- UI & EXPERIENCE SECTION -->
@@ -118,6 +129,7 @@ import { take } from 'rxjs';
     .form-group label { display: block; margin-bottom: 10px; font-size: 13px; font-weight: 700; color: #475569; }
     .form-group input, .form-group select { width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; box-sizing: border-box; }
     .mb-4 { margin-bottom: 20px; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
     .logo-preview-wrap { display: flex; align-items: center; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 16px; border: 1px dashed #cbd5e1; }
     .curr-logo { height: 80px; object-fit: contain; }

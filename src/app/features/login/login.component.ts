@@ -84,8 +84,8 @@ import { TenantConfig } from '../../core/models/tenant.model';
     .login-page { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; font-family: 'Inter', 'Segoe UI', sans-serif; background-size: cover; background-position: center; }
     .color-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.1); z-index: 0; }
     .container { position: relative; z-index: 10; display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; }
-    .logo { height: 60px; margin-bottom: 20px; object-fit: contain; display: block; margin-left: auto; margin-right: auto; }
-    .form-logo { height: 50px; margin-bottom: 20px; }
+    .logo { height: 100px; margin-bottom: 30px; object-fit: contain; display: block; margin-left: auto; margin-right: auto; }
+    .form-logo { height: 80px; margin-bottom: 20px; }
 
     /* --- MINIMAL --- */
     .minimal-style .card { background: white; padding: 50px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 400px; text-align: center; }

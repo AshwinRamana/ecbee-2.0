@@ -21,6 +21,8 @@ const tenantSchema = new mongoose.Schema({
         productTemplate: { type: String, default: 'standard' },
         checkoutTemplate: { type: String, default: 'standard' },
         bannerUrl: { type: String },
+        bannerTitle: { type: String, default: 'New Collection' },
+        bannerSubtitle: { type: String, default: 'Elevate your lifestyle with our curated collection.' },
         variantLabel: { type: String, default: 'Size' }
     },
     features: {

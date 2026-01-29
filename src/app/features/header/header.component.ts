@@ -65,7 +65,7 @@ import { Router } from '@angular/router';
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       position: sticky; top: 0; z-index: 100;
     }
-    .logo-img { height: 45px; transition: transform 0.3s ease; }
+    .logo-img { height: 60px; transition: transform 0.3s ease; }
     .logo-img:hover { transform: scale(1.05); }
     .nav-links {
       display: flex;
